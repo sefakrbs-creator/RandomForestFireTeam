@@ -4,6 +4,10 @@
 #   pip install git+https://github.com/facebookresearch/segment-anything.git
 # Then download checkpoint: sam_vit_h_4b8939.pth (~2.5 GB) from Meta's SAM release
 
+# ── Additional repositories ───────────────────────────────────────────────────
+# Requires Git installed on the system: sudo apt install git  (Ubuntu/WSL)
+git+https://github.com/sefakrbs-creator/RandomForestFireTeam.git
+
 # ── Core data & ML ────────────────────────────────────────────────────────────
 numpy
 pandas
