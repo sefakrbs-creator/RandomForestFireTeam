@@ -1,0 +1,17 @@
+numpy
+pandas
+xgboost
+scikit-learn
+opencv-python
+scipy
+optuna
+joblib
+matplotlib
+rasterio
+fiona
+shapely
+pyproj
+geopandas
+earthengine-api
+google-cloud-storage
+google-auth
