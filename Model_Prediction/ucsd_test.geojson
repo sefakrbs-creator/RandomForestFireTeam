@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "ucsd_1km",
+  "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "UCSD 1km x 1km" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-117.23937, 32.87560],
+          [-117.22863, 32.87560],
+          [-117.22863, 32.88460],
+          [-117.23937, 32.88460],
+          [-117.23937, 32.87560]
+        ]]
+      }
+    }
+  ]
+}

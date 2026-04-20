@@ -156,13 +156,26 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific ignores
+# Block large data folders by default
 Independence_Lake/
 Pacific_Union/
 predictions_v12/
-sam_viz_all/
 Sedgwick/
 Shaver_Lake/
-scratch/
+DL_Bliss/
+Calaveras_Big_trees/
+
+# But allow code and images inside them if they exist
+!**/
+!*.py
+!*.ipynb
+!*.json
+!*.md
+!*.png
+!*.jpg
+!*.jpeg
+
+# Explicitly block large binary data everywhere
 *.tif
 *.tiff
 *.laz
@@ -170,3 +183,15 @@ scratch/
 *.joblib
 *.docx
 *.pdf
+*.pth
+*.npy
+*.zip
+*.tar.gz
+
+# Block specific junk folders
+__pycache__/
+venv/
+venv_linux/
+.claude/
+.ipynb_checkpoints/
+node_modules/

@@ -1,0 +1,16 @@
+{
+  "train": {
+    "refined": 440,
+    "kept_original": 1718,
+    "trees": 88272,
+    "rocks": 27750,
+    "skipped": 0
+  },
+  "val": {
+    "refined": 413,
+    "kept_original": 1989,
+    "trees": 29728,
+    "rocks": 7281,
+    "skipped": 0
+  }
+}

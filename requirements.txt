@@ -1,17 +1,45 @@
+# Python >= 3.10 required (tested on 3.12 under WSL/Ubuntu)
+# Install inside venv_linux: pip install -r requirements.txt
+# SAM must be installed separately:
+#   pip install git+https://github.com/facebookresearch/segment-anything.git
+# Then download checkpoint: sam_vit_h_4b8939.pth (~2.5 GB) from Meta's SAM release
+
+# ── Core data & ML ────────────────────────────────────────────────────────────
 numpy
 pandas
-xgboost
-scikit-learn
-opencv-python
 scipy
+scikit-learn
+xgboost
 optuna
 joblib
-matplotlib
+
+# ── Geospatial ────────────────────────────────────────────────────────────────
 rasterio
+affine
 fiona
 shapely
 pyproj
 geopandas
+
+# ── Remote sensing & data download ───────────────────────────────────────────
 earthengine-api
+geemap
 google-cloud-storage
 google-auth
+planetary-computer
+pystac-client
+requests
+
+# ── Computer vision & annotation ─────────────────────────────────────────────
+opencv-python
+torch
+torchvision
+Pillow
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib
+
+# ── Notebook / labeling ───────────────────────────────────────────────────────
+jupyter
+notebook
+label-studio

@@ -1,0 +1,306 @@
+{
+  "version": "v12",
+  "inference_safe": true,
+  "changes_from_v11": [
+    "Labels from SAM polygon rasterization instead of CHM thresholds on CSV",
+    "Training data: labeled pixels from SAM-annotated 128x128 patches",
+    "Shrub (cat 0)=1, Tree (cat 1)=0, Rock (cat 2)=0, unlabeled=skipped",
+    "No terrain features (elevation/slope/aspect) \u2014 not in .npy patches",
+    "Texture computed per-patch (reflect padding instead of grid layout)"
+  ],
+  "data_source": {
+    "train_json": "./detectron2_dataset/shrub_train_sam.json",
+    "val_json": "./detectron2_dataset/shrub_val_sam.json"
+  },
+  "feature_selection": {
+    "candidate_count": 55,
+    "top_k": 20,
+    "pass1_importance_ranking": [
+      {
+        "feature": "canopy_height_7x7mean",
+        "importance": 0.15797752141952515
+      },
+      {
+        "feature": "canopy_height_5x5mean",
+        "importance": 0.09306776523590088
+      },
+      {
+        "feature": "naip_red_5x5std",
+        "importance": 0.07856588065624237
+      },
+      {
+        "feature": "brightness_7x7std",
+        "importance": 0.06587197631597519
+      },
+      {
+        "feature": "canopy_height_3x3mean",
+        "importance": 0.04278937727212906
+      },
+      {
+        "feature": "naip_red_3x3std",
+        "importance": 0.027857579290866852
+      },
+      {
+        "feature": "brightness_5x5std",
+        "importance": 0.024651771411299706
+      },
+      {
+        "feature": "canopy_height_7x7std",
+        "importance": 0.023425107821822166
+      },
+      {
+        "feature": "canopy_shrub_clipped",
+        "importance": 0.022837379947304726
+      },
+      {
+        "feature": "savi_7x7std",
+        "importance": 0.022133076563477516
+      },
+      {
+        "feature": "canopy_in_shrub_range",
+        "importance": 0.018484752625226974
+      },
+      {
+        "feature": "naip_red_7x7std",
+        "importance": 0.018392030149698257
+      },
+      {
+        "feature": "greenness_ratio",
+        "importance": 0.017989307641983032
+      },
+      {
+        "feature": "brightness_3x3mean",
+        "importance": 0.01727108284831047
+      },
+      {
+        "feature": "savi_7x7mean",
+        "importance": 0.017248526215553284
+      },
+      {
+        "feature": "naip_nir_7x7std",
+        "importance": 0.01693573407828808
+      },
+      {
+        "feature": "naip_green_3x3std",
+        "importance": 0.01600254699587822
+      },
+      {
+        "feature": "ndvi_7x7mean",
+        "importance": 0.015520155429840088
+      },
+      {
+        "feature": "canopy_height_5x5std",
+        "importance": 0.01544204168021679
+      },
+      {
+        "feature": "gndvi",
+        "importance": 0.014420119114220142
+      },
+      {
+        "feature": "naip_green_5x5mean",
+        "importance": 0.013211569748818874
+      },
+      {
+        "feature": "ndvi_5x5std",
+        "importance": 0.01278780773282051
+      },
+      {
+        "feature": "naip_nir_7x7mean",
+        "importance": 0.012137224897742271
+      },
+      {
+        "feature": "savi_5x5std",
+        "importance": 0.012049312703311443
+      },
+      {
+        "feature": "savi_3x3std",
+        "importance": 0.011780055239796638
+      },
+      {
+        "feature": "savi",
+        "importance": 0.01130799949169159
+      },
+      {
+        "feature": "brightness_5x5mean",
+        "importance": 0.010866825468838215
+      },
+      {
+        "feature": "brightness_7x7mean",
+        "importance": 0.01070792879909277
+      },
+      {
+        "feature": "ndvi_3x3std",
+        "importance": 0.010454942472279072
+      },
+      {
+        "feature": "naip_nir_5x5std",
+        "importance": 0.009810902178287506
+      },
+      {
+        "feature": "canopy_height_3x3std",
+        "importance": 0.009717600420117378
+      },
+      {
+        "feature": "naip_nir_5x5mean",
+        "importance": 0.008397337980568409
+      },
+      {
+        "feature": "brightness_3x3std",
+        "importance": 0.008315552957355976
+      },
+      {
+        "feature": "naip_green_7x7mean",
+        "importance": 0.008250582963228226
+      },
+      {
+        "feature": "canopy_height",
+        "importance": 0.008168904110789299
+      },
+      {
+        "feature": "naip_blue",
+        "importance": 0.008150422014296055
+      },
+      {
+        "feature": "ndvi_7x7std",
+        "importance": 0.00811831746250391
+      },
+      {
+        "feature": "naip_red_5x5mean",
+        "importance": 0.007539078593254089
+      },
+      {
+        "feature": "naip_green_7x7std",
+        "importance": 0.007420651614665985
+      },
+      {
+        "feature": "savi_5x5mean",
+        "importance": 0.006857642903923988
+      },
+      {
+        "feature": "naip_green",
+        "importance": 0.006661462131887674
+      },
+      {
+        "feature": "naip_red_3x3mean",
+        "importance": 0.006609730422496796
+      },
+      {
+        "feature": "evi2",
+        "importance": 0.006290344521403313
+      },
+      {
+        "feature": "naip_red_7x7mean",
+        "importance": 0.006036672741174698
+      },
+      {
+        "feature": "naip_red",
+        "importance": 0.005995236802846193
+      },
+      {
+        "feature": "brightness",
+        "importance": 0.005850300658494234
+      },
+      {
+        "feature": "savi_3x3mean",
+        "importance": 0.005843234248459339
+      },
+      {
+        "feature": "naip_green_3x3mean",
+        "importance": 0.005689691286534071
+      },
+      {
+        "feature": "naip_nir_3x3mean",
+        "importance": 0.005688690114766359
+      },
+      {
+        "feature": "ndvi",
+        "importance": 0.005636944435536861
+      },
+      {
+        "feature": "naip_green_5x5std",
+        "importance": 0.004717724397778511
+      },
+      {
+        "feature": "naip_nir",
+        "importance": 0.004563497379422188
+      },
+      {
+        "feature": "ndvi_3x3mean",
+        "importance": 0.004153397399932146
+      },
+      {
+        "feature": "ndvi_5x5mean",
+        "importance": 0.0022521696519106627
+      },
+      {
+        "feature": "naip_nir_3x3std",
+        "importance": 0.0010765219340100884
+      }
+    ]
+  },
+  "features": [
+    "canopy_height_7x7mean",
+    "canopy_height_5x5mean",
+    "naip_red_5x5std",
+    "brightness_7x7std",
+    "canopy_height_3x3mean",
+    "naip_red_3x3std",
+    "brightness_5x5std",
+    "canopy_height_7x7std",
+    "canopy_shrub_clipped",
+    "savi_7x7std",
+    "canopy_in_shrub_range",
+    "naip_red_7x7std",
+    "greenness_ratio",
+    "brightness_3x3mean",
+    "savi_7x7mean",
+    "naip_nir_7x7std",
+    "naip_green_3x3std",
+    "ndvi_7x7mean",
+    "canopy_height_5x5std",
+    "gndvi"
+  ],
+  "scaled_features": [
+    "canopy_height_7x7mean",
+    "canopy_height_5x5mean",
+    "naip_red_5x5std",
+    "brightness_7x7std",
+    "canopy_height_3x3mean",
+    "naip_red_3x3std",
+    "brightness_5x5std",
+    "canopy_height_7x7std",
+    "canopy_shrub_clipped",
+    "savi_7x7std",
+    "naip_red_7x7std",
+    "greenness_ratio",
+    "brightness_3x3mean",
+    "savi_7x7mean",
+    "naip_nir_7x7std",
+    "naip_green_3x3std",
+    "ndvi_7x7mean",
+    "canopy_height_5x5std",
+    "gndvi"
+  ],
+  "no_scale_features": [
+    "canopy_in_shrub_range"
+  ],
+  "cls_threshold": 0.5443,
+  "metrics": {
+    "auc": 0.7723,
+    "precision": 0.7533,
+    "recall": 0.9065,
+    "f1": 0.8229
+  },
+  "best_params": {
+    "learning_rate": 0.11364355894710455,
+    "max_depth": 8,
+    "min_child_weight": 2.9895050687399864,
+    "gamma": 4.77432640331597,
+    "subsample": 0.8689484583478843,
+    "colsample_bytree": 0.6880478367579804,
+    "reg_alpha": 0.0032024821378842483,
+    "reg_lambda": 5.9758620281693596e-05,
+    "scale_pos_weight": 8.184198695533567,
+    "n_estimators": 2000
+  }
+}
