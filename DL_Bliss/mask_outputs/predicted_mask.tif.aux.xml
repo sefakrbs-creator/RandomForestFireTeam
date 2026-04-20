@@ -1,0 +1,12 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>Predicted Fractional Shrub Cover</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">1</MDI>
+      <MDI key="STATISTICS_MEAN">0.01992077076327</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0.091297290858575</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">19.28</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
