@@ -188,6 +188,10 @@ Calaveras_Big_trees/
 *.zip
 *.tar.gz
 
+# Exceptions for specific folders
+!predictions_v12/**/*.tif
+!predictions_v12/**/*.tiff
+
 # Block specific junk folders
 __pycache__/
 venv/
