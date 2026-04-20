@@ -188,6 +188,19 @@ Calaveras_Big_trees/
 *.zip
 *.tar.gz
 
+# Block specific giant files across all sites
+*predicted_shrub_v*.geojson
+*merged_grid_stats.geojson
+*merged_grid_stats.csv
+*predicted_grid_stats.geojson
+mask_outputs/
+mask_outputs_sprint4/
+mask_outputs_test_6350/
+data_challenge/
+DEM/
+burn_units/
+NAIP_3DEP_product/
+
 # Exceptions for specific folders
 !predictions_v12/**/*.tif
 !predictions_v12/**/*.tiff

@@ -1,0 +1,13 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>Canopy Height (m)</Description>
+    <Metadata>
+      <MDI key="STATISTICS_APPROXIMATE">YES</MDI>
+      <MDI key="STATISTICS_MAXIMUM">32</MDI>
+      <MDI key="STATISTICS_MEAN">1.2357758506205</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">3.129793762531</MDI>
+      <MDI key="STATISTICS_VALID_PERCENT">69.67</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>
