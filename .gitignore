@@ -204,6 +204,8 @@ NAIP_3DEP_product/
 # Exceptions for specific folders
 !predictions_v12/**/*.tif
 !predictions_v12/**/*.tiff
+!detectron2_dataset/images/
+!detectron2_dataset/images/*.npy
 
 # Block specific junk folders
 __pycache__/
