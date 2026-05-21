@@ -8,7 +8,6 @@ A **shrub detection pipeline** that produces georeferenced shrub probability map
 
 ```
 RandomForestTeam/
-├── CLAUDE.md
 ├── export_patches_for_labeling.py   # Export patches as PNGs + Label Studio import JSON (pre-SAM review)
 ├── sam_annotate.py                  # SAM refinement: circular → precise masks + hard negatives
 ├── train_shrub_v12.py               # Train XGBoost pixel classifier (V12)

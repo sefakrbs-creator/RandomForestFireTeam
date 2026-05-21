@@ -56,16 +56,27 @@ def run_shrub_prediction_v12(naip_path, chm_path, output_path,
         profile   = src.profile.copy()
         transform = src.transform
 
+    rows, cols = R.shape
+
+    # Reproject CHM onto the NAIP grid so both arrays have identical shape
+    from rasterio.warp import reproject, Resampling
+    CHM = np.zeros((rows, cols), dtype=np.float32)
     with rasterio.open(chm_path) as src:
-        CHM = src.read(1).astype(np.float32)
-        if src.nodata is not None:
-            CHM[CHM == src.nodata] = np.nan
+        reproject(
+            source=rasterio.band(src, 1),
+            destination=CHM,
+            src_transform=src.transform,
+            src_crs=src.crs,
+            dst_transform=transform,
+            dst_crs=profile["crs"],
+            resampling=Resampling.bilinear,
+            src_nodata=src.nodata,
+            dst_nodata=np.nan,
+        )
     CHM = np.nan_to_num(CHM, nan=0.0).clip(min=0.0)
 
     for arr in (R, G, B, NIR):
         np.nan_to_num(arr, nan=0.0, posinf=0.0, neginf=0.0, copy=False)
-
-    rows, cols = R.shape
     print(f"  Raster dimensions: {rows} × {cols} = {rows*cols:,} pixels")
 
     print("\nComputing spectral indices + canopy features...")

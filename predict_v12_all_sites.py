@@ -76,12 +76,24 @@ def compute_features(naip_path, chm_path):
         NIR = src.read(4).astype(np.float32)
         profile   = src.profile.copy()
         transform = src.transform
+        naip_crs  = src.crs
+        H, W      = src.height, src.width
 
+    # Reproject CHM onto the NAIP grid so both arrays have identical shape
+    from rasterio.warp import reproject, Resampling
+    CHM = np.zeros((H, W), dtype=np.float32)
     with rasterio.open(chm_path) as src:
-        CHM = src.read(1).astype(np.float32)
-        nd  = src.nodata
-        if nd is not None:
-            CHM[CHM == nd] = np.nan
+        reproject(
+            source=rasterio.band(src, 1),
+            destination=CHM,
+            src_transform=src.transform,
+            src_crs=src.crs,
+            dst_transform=transform,
+            dst_crs=naip_crs,
+            resampling=Resampling.bilinear,
+            src_nodata=src.nodata,
+            dst_nodata=np.nan,
+        )
     CHM = np.nan_to_num(CHM, nan=0.0).clip(min=0.0)
 
     # Sanitize NAIP
